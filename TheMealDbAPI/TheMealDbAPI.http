@@ -1,0 +1,25 @@
+@TheMealDbAPI_HostAddress = http://localhost:5073
+
+GET {{TheMealDbAPI_HostAddress}}/api/Meal?mealName=Arrabiata
+Accept: application/json
+
+###
+
+GET {{TheMealDbAPI_HostAddress}}/api/meal/random
+Accept: application/json
+
+###
+
+GET {{TheMealDbAPI_HostAddress}}/api/meal/categories
+Accept: application/json
+
+###
+
+POST {{TheMealDbAPI_HostAddress}}/api/auth/authenticate
+Accept: application/json
+Content-Type: application/json
+{
+  "UserName": "admin",
+  "Password": "password"
+}
+###

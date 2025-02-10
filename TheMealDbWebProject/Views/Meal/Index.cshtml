@@ -1,0 +1,87 @@
+﻿@model Meal
+
+<style>
+    body {
+        background-color: #000;
+        color: #fff !important;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+        background-color: #6c757d !important;
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: #fff !important;
+    }
+
+    .card {
+        background-color: #1e1e1e !important;
+        border-color: #444;
+        color: #fff !important;
+    }
+
+    .card-header {
+        background-color: #6c757d !important;
+        color: #fff !important;
+    }
+
+    .text-muted{
+        color: #fff !important;
+    }
+
+    .btn-primary {
+        background-color: #6c757d !important;
+        border-color: #6c757d !important;
+        color: #fff !important;
+    }
+
+        .btn-primary:hover {
+            background-color: #5a6268 !important;
+        }
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Search for a Meal</h3>
+                </div>
+                <div class="card-body">
+                    <form method="get" class="d-flex">
+                        <input type="text" name="mealName" class="form-control me-2" placeholder="Enter meal name..." required />
+                        <button style="margin-right: .5rem" type="submit" class="btn btn-primary">Search</button>
+                        <a asp-action="Index" asp-route-random="true" class="btn btn-warning">Random</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model != null)
+    {
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <img src="@Model.StrMealThumb" class="card-img-top img-fluid rounded mx-auto d-block" style="max-width: 300px; height: auto; margin-top: .7rem" alt="@Model.StrMeal">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">@Model.StrMeal</h4>
+                        <p><strong>Category:</strong> @Model.StrCategory</p>
+                        <p><strong>Area:</strong> @Model.StrArea</p>
+                        <p class="text-justify"><strong>Instructions:</strong> @Model.StrInstructions</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="@Model.StrYoutube" class="btn btn-danger" target="_blank">Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="text-center mt-4">
+            <p class="text-muted">No meal found. Try searching for something like "Pasta" or "Chicken".</p>
+        </div>
+    }
+</div>
