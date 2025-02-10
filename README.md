@@ -4,6 +4,8 @@ This project is a modern web application built with ASP.NET Core, Bootstrap, and
 
 It was a project where I tried to learn and reinforce Authorization with Token for Secure Web APIs. Using JWT Token, I aimed to ensure that non-authenticate users cannot access the API.
 
+TheMealDb API: https://www.themealdb.com/
+
 🚀 Features:
 
   -Search meals by name
